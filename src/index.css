@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Sora:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 211 230 253; /* #D3E6FD */
+    --foreground: 18 18 18;    /* #121212 */
+    --primary: 76 110 220;     /* #4C6EDC */
+    --primary-foreground: 255 255 255; /* #fff */
+    --secondary: 93 131 227;   /* #5D83E3 */
+    --secondary-foreground: 255 255 255;
+    --highlight: 139 190 243;  /* #8BBEF3 */
+    --highlight-foreground: 18 18 18;
+    --tab-active: 76 110 220;  /* #4C6EDC */
+    --tab-inactive: 211 230 253; /* #D3E6FD */
+    --card: 211 230 253;       /* #D3E6FD */
+    --dark: 18 18 18;          /* #121212 */
+    --dark-alt: 26 26 26;      /* #1A1A1A */
+    --white: 255 255 255;
+    --border: 224 224 224;     /* #E0E0E0 */
+    --muted: 139 190 243;      /* #8BBEF3 */
+    --accent: 93 131 227;      /* #5D83E3 */
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --input: 226 232 240;
+    --ring: 99 102 241;
+    --radius: 1rem;
+    
+    /* Custom Fora colors */
+    --fora-blue: 59 130 246;
+    --fora-purple: 139 92 246;
+    --fora-green: 34 197 94;
+    --fora-orange: 251 146 60;
+    --wellness-gradient: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(139 92 246) 100%);
+  }
+
+  .dark {
+    --background: 18 18 18;    /* #121212 */
+    --foreground: 255 255 255; /* #fff */
+    --primary: 76 110 220;     /* #4C6EDC */
+    --primary-foreground: 255 255 255;
+    --secondary: 93 131 227;   /* #5D83E3 */
+    --secondary-foreground: 255 255 255;
+    --highlight: 139 190 243;  /* #8BBEF3 */
+    --highlight-foreground: 255 255 255;
+    --tab-active: 76 110 220;
+    --tab-inactive: 26 26 26;  /* #1A1A1A */
+    --card: 26 26 26;          /* #1A1A1A */
+    --dark: 18 18 18;
+    --dark-alt: 26 26 26;
+    --white: 255 255 255;
+    --border: 224 224 224;
+    --muted: 139 190 243;
+    --accent: 93 131 227;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --input: 30 41 59;
+    --ring: 99 102 241;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-['Inter'];
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    font-family: 'Sora', 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+    background: #eaf6ff;
+    color: #22223b;
+    min-height: 100vh;
+  }
+
+  html {
+    background: #eaf6ff;
+  }
+
+  main {
+    background: #eaf6ff;
+  }
+}
+
+@layer utilities {
+  .wellness-gradient {
+    background: var(--wellness-gradient);
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80 dark:bg-slate-900/80;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .card-hover {
+    @apply hover:scale-[1.02] hover:shadow-lg smooth-transition;
+  }
+}

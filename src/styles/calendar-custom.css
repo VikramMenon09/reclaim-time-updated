@@ -1,0 +1,223 @@
+/* iOS-inspired calendar custom styles */
+
+/* Custom Grid Calendar Styles */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  height: 100%;
+}
+
+.calendar-day {
+  position: relative;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar-day:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(180, 170, 255, 0.15);
+}
+
+.calendar-day.other-month {
+  background: rgba(156, 163, 175, 0.2);
+  color: rgba(156, 163, 175, 0.6);
+}
+
+.calendar-day.today {
+  background: linear-gradient(135deg, #4C6EDC 0%, #8BBEF3 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(76, 110, 220, 0.25);
+  border: 2px solid #fff;
+  animation: calendarRipple 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.calendar-day.selected {
+  ring: 2px;
+  ring-color: #5D83E3;
+}
+
+.calendar-day.sunday {
+  font-weight: bold;
+  color: #ef4444;
+}
+
+.calendar-day.sunday.today {
+  color: white;
+}
+
+/* Date number styling */
+.calendar-date {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+/* Event indicators */
+.event-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  align-items: center;
+}
+
+.task-indicator {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: linear-gradient(135deg, #5D83E3 0%, #8BBEF3 100%);
+  border-radius: 8px;
+  padding: 2px 6px;
+  box-shadow: 0 2px 4px rgba(93, 131, 227, 0.3);
+}
+
+.event-dots {
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Weekday headers */
+.weekday-header {
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4C6EDC;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Month navigation */
+.month-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+.month-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #121212;
+}
+
+.nav-button {
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Animation for today's date */
+@keyframes calendarRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(180, 170, 255, 0.25);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(180, 170, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 16px rgba(180, 170, 255, 0.25);
+  }
+}
+
+/* Modal spring animation */
+@keyframes modalSpring {
+  0% {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translateY(-8px) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .calendar-day {
+    min-height: 60px;
+    padding: 6px;
+  }
+  
+  .calendar-date {
+    font-size: 12px;
+  }
+  
+  .weekday-header {
+    font-size: 10px;
+    padding: 6px 2px;
+  }
+  
+  .month-title {
+    font-size: 16px;
+  }
+  
+  .event-dot {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .task-indicator {
+    padding: 1px 4px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .calendar-day {
+    background: rgba(24, 31, 58, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .calendar-day:hover {
+    background: rgba(24, 31, 58, 0.8);
+  }
+  
+  .calendar-day.other-month {
+    background: rgba(75, 85, 99, 0.2);
+    color: rgba(156, 163, 175, 0.4);
+  }
+  
+  .month-title {
+    color: #f9fafb;
+  }
+  
+  .weekday-header {
+    color: #a78bfa;
+  }
+} 

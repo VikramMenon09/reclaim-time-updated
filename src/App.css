@@ -1,0 +1,90 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card, .rounded-xl, .rounded-2xl, .rounded-3xl {
+  border-radius: 1.5rem !important;
+  background: #D3E6FD !important;
+  box-shadow: 0 2px 16px 0 rgba(76, 110, 220, 0.08);
+}
+
+button, .btn, .Button, .rounded-lg {
+  border-radius: 1rem !important;
+  font-family: 'Sora', 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #4C6EDC 0%, #5D83E3 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(76, 110, 220, 0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover, .btn:hover, .Button:hover {
+  background: linear-gradient(90deg, #5D83E3 0%, #8BBEF3 100%);
+  box-shadow: 0 4px 16px 0 rgba(76, 110, 220, 0.16);
+}
+
+input, textarea, select {
+  border-radius: 0.75rem !important;
+  border: 1px solid #E0E0E0 !important;
+  background: #fff !important;
+  font-family: 'Quicksand', 'Sora', ui-sans-serif, system-ui, sans-serif;
+}
+
+label {
+  font-family: 'Sora', 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+  color: #4C6EDC;
+}
+
+.modal, .DialogContent, .Dialog {
+  border-radius: 1.5rem !important;
+  background: #D3E6FD !important;
+  font-family: 'Sora', 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+}
+
+.bg-blue-500, .bg-blue-600, .bg-purple-500, .bg-purple-600, .bg-slate-100, .bg-slate-800, .bg-white, .dark\:bg-slate-800, .dark\:bg-slate-900, .bg-green-50, .bg-green-500, .bg-green-600, .bg-blue-50, .bg-blue-100, .bg-blue-400, .bg-blue-900, .bg-green-950\/20, .bg-blue-950\/20, .bg-purple-50, .bg-purple-600, .bg-purple-900, .bg-purple-950\/20, .bg-blue-950\/20 {
+  background: #D3E6FD !important;
+  color: #121212 !important;
+}
+
+.text-slate-900, .text-slate-100, .text-slate-400, .text-slate-500, .text-slate-600, .text-slate-700, .text-blue-600, .text-blue-400, .text-green-600, .text-green-400, .text-purple-500, .text-purple-600, .text-purple-900 {
+  color: #4C6EDC !important;
+}
+
+body, html, h1, h2, h3, h4, h5, h6, p, span, div, label, input, textarea, select, button {
+  font-family: 'Sora', 'Quicksand', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+.read-the-docs {
+  color: #888;
+}
